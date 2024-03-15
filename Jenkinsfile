@@ -36,6 +36,7 @@ pipeline {
                     // sh 'sudo apt install kubeaudit'
                     // sh 'kubeaudit version'
                     // sh 'kubeaudit all'
+                    sh 'ls'
                     sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/manifest.yaml > audit12.log' 
                     sh 'pwd'
                     sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/fixed-manifest.yaml > audit.log' 
