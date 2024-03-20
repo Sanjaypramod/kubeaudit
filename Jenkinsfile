@@ -37,12 +37,12 @@ pipeline {
                     // sh 'kubeaudit version'
                     // sh 'kubeaudit all'
                     sh 'pwd'
+                    sh "whoami"
                     sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/manifest.yaml > audit12.log' 
                     sh 'pwd'
                     sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/fixed-manifest.yaml > audit.log' 
                     // sh "ls"
                     // sh 'kubeaudit version'
-                    sh "whoami"
                     sh "echo $PATH"
                 }
             }
