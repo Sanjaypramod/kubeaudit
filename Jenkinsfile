@@ -34,19 +34,21 @@ pipeline {
                     // sh 'sudo export PATH=$PATH:/usr/local/go/bin'
                     // sh 'sudo go version'
                     // sh 'sudo apt install kubeaudit'
-                    // sh 'kubeaudit version'
-                    // sh 'kubeaudit all'
+                    sh 'kubeaudit version'
+                    // sh 'pwd'
+                    // sh 'kubeaudit all > audit.log'
                     sh 'pwd'
                     sh "whoami"
-                    sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/manifest.yaml > audit12.log' 
+                    sh "echo $PATH"
+                    sh 'cd /var/lib/jenkins/workspace/kubeaudit'
+                    sh 'kubeaudit all -f manifest.yaml | tee audit07.log' 
                     sh 'pwd'
-                    sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/fixed-manifest.yaml > audit.log' 
+                    // sh 'kubeaudit all -f /var/lib/jenkins/kubeaudit/fixed-manifest.yaml > audit.log' 
                     // sh "ls"
                     // sh 'kubeaudit version'
-                    sh "echo $PATH"
+                   
                 }
             }
         }   
     }
 }
-
